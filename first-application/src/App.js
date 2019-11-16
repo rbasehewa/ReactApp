@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { CardList } from './components/card-list/card-list.component';
 import './App.css';
 
 class App extends Component {
@@ -6,20 +7,7 @@ class App extends Component {
     super();
 
     this.state = {
-      projects: [
-        { 
-          name: 'Project 1',
-          id: '1'
-        },
-        {
-          name: 'Project 2',
-          id: '2'
-        },
-        {
-          name: 'Project 3',
-          id: '3'
-        }
-      ]
+      projects: []
     };
   }
 
@@ -34,11 +22,13 @@ class App extends Component {
   render(){
     return(
       <div className='App'>
+        <CardList name='Project 1'>
         {
           this.state.projects.map(project => (
             <h1 key={project.id}> {project.name}</h1>
           ))
         }
+        </CardList>
       </div>
     );
   }
